@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Go Training
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <ion-card-title> Sugestões de melhorias ou exercícios: </ion-card-title>
+    <ion-input [(ngModel)]="sugestoes.sugestoes">  </ion-input>
+    <br>
+    <br>
+    <ion-button expand="full" color="danger" (click)= "Sugerir()"> Enviar Sugestão </ion-button>
+    <ion-button expand="full" color="danger" href="home"> Voltar </ion-button>
+    <h1> </h1>
+    <br>
+    <br>
+    <br>
+    <ion-img src= "http://jbvi.com.br/images/pessoas-icon.png"> </ion-img>
+  </div>
+</ion-content>

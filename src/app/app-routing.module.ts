@@ -11,6 +11,7 @@ import { ListarPage } from './/componentes/cadastro/listar/listar.page';
 import { ListarSugestoesComponent } from './componentes/sugestoes/listar-sugestoes/listar-sugestoes.component';
 import {BarrigaComponent} from './componentes/barriga/barriga.component';
 import {PernasComponent} from './componentes/pernas/pernas.component';
+import {SugestoesSalvarComponent} from './componentes/sugestoes/sugestoes-salvar/sugestoes-salvar.component'; 
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,9 @@ const routes: Routes = [
   { path: 'loginecadastro', component: LoginecadastroComponent },
   { path: 'sugestoes', component: SugestoesComponent },
   { path: 'listar', component: ListarPage },
-  { path: 'listar-sugestoes', component: ListarSugestoesComponent },  { path: 'pagina', loadChildren: './pagina/pagina.module#PaginaPageModule' },
+  { path: 'sugestoes-salvar', component: SugestoesSalvarComponent},
+  { path: 'listar-sugestoes', component: ListarSugestoesComponent },
+  { path: 'pagina', loadChildren: './pagina/pagina.module#PaginaPageModule' },
   { path: 'cidade-salvar', loadChildren: './cidade/cidade-salvar/cidade-salvar.module#CidadeSalvarPageModule' },
   { path: 'cidade-listar', loadChildren: './cidade/cidade-listar/cidade-listar.module#CidadeListarPageModule' },
   { path: 'estado-salvar', loadChildren: './estado/estado-salvar/estado-salvar.module#EstadoSalvarPageModule' },

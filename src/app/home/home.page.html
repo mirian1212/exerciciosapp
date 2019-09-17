@@ -8,17 +8,32 @@
 
 <ion-content>
   <div class="ion-padding">
-    <ion-input [(ngModel)]="login.email"> Email: </ion-input>
-    <ion-input [(ngModel)]="login.senha" type= "password"> Senha: </ion-input>
-    <h1> </h1>
-    <ion-button expand="block" color="danger" (click)="logar()">Acessar</ion-button>
-    <ion-button expand="block" color="danger" href="cadastro"> Cadastrar-se </ion-button>
-    <ion-button (click)= "redefinir()" expand= "block" color= "danger"> Esqueceu a senha? </ion-button>
-    <h1> </h1>
-    <br>
-    <br>
-    <br>
-    <br>
-    <ion-img src= "https://crossfitcapixaba.com.br/wp-content/uploads/2016/09/burpees.png"> </ion-img>
+    <form #meuForm='ngForm'>
+
+      <ion-item>
+        <ion-label position="floating" color="dark"> Email: </ion-label>
+        <ion-input #nome='ngModel' type="text" [(ngModel)]="login.email" name='nome' placeholder="insira seu email" required></ion-input>
+      </ion-item>
+      <span style='color:red' *ngIf="nome.errors">
+        <ion-label> O email é obrigatório </ion-label>
+      </span>
+
+      <ion-item>
+        <ion-label position="floating" color="dark"> Senha: </ion-label>
+        <ion-input #senha='ngModel' type="password" name="telefone" [(ngModel)]="login.senha" placeholder="insira sua senha" required></ion-input>
+      </ion-item>
+      <span style='color:red' *ngIf="senha.errors">
+        <ion-label> A senha é obrigatória </ion-label>
+      </span>
+
+      <h1> </h1>
+      <ion-button expand="block" color="danger" (click)="logar()">Acessar</ion-button>
+      <ion-button expand="block" color="danger" href="cadastro"> Cadastrar-se </ion-button>
+      <ion-button (click)="redefinir()" expand="block" color="danger"> Esqueceu a senha? </ion-button>
+      <h1> </h1>
+      <br>
+      <br>
+      <ion-img src="https://crossfitcapixaba.com.br/wp-content/uploads/2016/09/burpees.png"> </ion-img>
+    </form>
   </div>
 </ion-content>

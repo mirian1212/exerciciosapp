@@ -1,13 +1,19 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Sugestões</ion-title>
+    <ion-title>Sugestões:</ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
+  <ion-searchbar [(ngModel)]="valor" (ionChange)="filtrar()"> </ion-searchbar>
   <ion-list>
-    <ion-item *ngFor="let sugestoes of listaUsuario | async">
+    <ion-item *ngFor="let sugestoes of listaFiltro">
       <ion-label>{{ sugestoes.sugestoes }}</ion-label>
-      <ion-button (click)="excluir(sugestoes.key)" href="listar-sugestoes"> Excluir </ion-button>
+      <ion-button (click)="excluir(sugestoes.key)" href="listar-sugestoes" color="danger">
+          <ion-icon name="close-circle"> </ion-icon>
+        </ion-button>
+        <ion-button (click)="alterar(sugestoes.key)">
+           <ion-icon name="create"></ion-icon>
+         </ion-button>
     </ion-item>
   </ion-list>
   <ion-button expand="full" color="danger" href="home"> Voltar ao início </ion-button>
