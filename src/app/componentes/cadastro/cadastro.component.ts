@@ -32,8 +32,8 @@ export class CadastroComponent {
   Salvar() {
     this.fire.list('cadastro').push(this.cadastro);
     this.cadastro = new Pessoa();
-    this.rota.navigate(['exercicio']);
-    alert('Salvo com sucesso!');
+    this.rota.navigate(['cadastro']);
+    alert('Salvo com sucesso! Agora escolha a opção de treino');
   }
   Proximo(){
   this.rota.navigate([this.endereco]);

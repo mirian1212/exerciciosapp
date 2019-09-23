@@ -10,8 +10,9 @@ import { SugestoesComponent } from './/componentes/sugestoes/sugestoes.component
 import { ListarPage } from './/componentes/cadastro/listar/listar.page';
 import { ListarSugestoesComponent } from './componentes/sugestoes/listar-sugestoes/listar-sugestoes.component';
 import {BarrigaComponent} from './componentes/barriga/barriga.component';
+import {PosturaComponent} from './componentes/postura/postura.component';
 import {PernasComponent} from './componentes/pernas/pernas.component';
-import {SugestoesSalvarComponent} from './componentes/sugestoes/sugestoes-salvar/sugestoes-salvar.component'; 
+import {SugestoesSalvarComponent} from './componentes/sugestoes/sugestoes-salvar/sugestoes-salvar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,7 +36,8 @@ const routes: Routes = [
   { path: 'listar', loadChildren: './exercicioss/listar/listar.module#ListarPageModule' },
   { path: 'salvar', loadChildren: './exercicioss/salvar/salvar.module#SalvarPageModule' },
   { path: 'barriga', component : BarrigaComponent},
-  {path: 'pernas', component: PernasComponent}
+  {path: 'pernas', component: PernasComponent},
+  { path: 'postura', component: PosturaComponent}
 
 ];
 

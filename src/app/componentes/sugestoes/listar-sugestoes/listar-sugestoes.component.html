@@ -11,10 +11,11 @@
       <ion-button (click)="excluir(sugestoes.key)" href="listar-sugestoes" color="danger">
           <ion-icon name="close-circle"> </ion-icon>
         </ion-button>
-        <ion-button (click)="alterar(sugestoes.key)">
+        <ion-button (click)="alterar(sugestoes)" color= "danger">
            <ion-icon name="create"></ion-icon>
          </ion-button>
     </ion-item>
   </ion-list>
   <ion-button expand="full" color="danger" href="home"> Voltar ao início </ion-button>
+  <ion-button expand="full" color="danger" href="sugestoes"> Voltar à página anterior </ion-button>
 </ion-content>
