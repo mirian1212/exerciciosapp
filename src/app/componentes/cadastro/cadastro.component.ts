@@ -7,6 +7,7 @@ import { Cidade } from '../../cidade/entidade/cidade';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AngularFireAuth } from 'angularfire2/auth';
+
 @Component({
   selector: 'cadastro.component',
   templateUrl: 'cadastro.component.html',
@@ -17,6 +18,9 @@ export class CadastroComponent {
   endereco: string
   cadastro: Pessoa = new Pessoa();
   cidade: Cidade = new Cidade();
+  total: Number;
+  resultado= Number;
+
   listaEstado: Observable<Estado[]>;
   constructor(private fire: AngularFireDatabase, private rota: Router) {
     this.listaEstado = this.fire.list<Estado>('estado').snapshotChanges().pipe(
@@ -38,4 +42,15 @@ export class CadastroComponent {
   Proximo(){
   this.rota.navigate([this.endereco]);
 }
+  Calculo(){
+    let resultado= Number(this.cadastro.altura) * Number(this.cadastro.altura);
+    let total= Number(this.total);
+    let peso= Number(this.cadastro.peso);
+    total= peso/ resultado;
+
+    if(this.total < 18){
+      alert("O Indice"+ total + "está abaixo do indicado" );
+    }
+  }
+  
 }
