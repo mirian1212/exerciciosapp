@@ -42,15 +42,31 @@ export class CadastroComponent {
   Proximo(){
   this.rota.navigate([this.endereco]);
 }
-  Calculo(){
-    let resultado= Number(this.cadastro.altura) * Number(this.cadastro.altura);
-    let total= Number(this.total);
-    let peso= Number(this.cadastro.peso);
-    total= peso/ resultado;
+  //  Altura multiplicada por ela mesma
+  //  Peso dividido pelo quadrado da altura
 
-    if(this.total < 18){
-      alert("O Indice"+ total + "está abaixo do indicado" );
+  Calculo(){
+    let alt = (Number(this.cadastro.altura)* Number (this.cadastro.altura));
+    let peso = Number(this.cadastro.peso);
+    let total = peso/alt;
+
+    if(total < 18){
+      alert("O Indice " + total + " está abaixo do indicado" );
     }
+  else if(total >18.5 && total < 24.9){
+      alert("O indice "+ total + " está normal" );
   }
-  
+  else if (total >25 && total < 29.9 ){
+      alert("O indice "+ total + " está em sobrepeso" );
+  }
+  else if (total >30 && total < 34.9){
+      alert("O indice "+ total + " está em obesidade em 1 grau" );
+}
+  else if (total >35 && total < 39.9){
+      alert("O indice "+ total + " está em obesidade de 2 grau" );
+  }
+  else {
+      alert("O indice "+ total + " está em obesidade de 3 grau" );
+}
+}
 }
